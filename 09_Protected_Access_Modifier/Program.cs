@@ -20,7 +20,7 @@ namespace _09_Protected_Access_Modifier
             this.strSchoolName = strSchoolName;
             this.strAddress = strAddress;
         }
-        public int GetTotalStudents ()
+        public static int GetTotalStudents ()
         {
             return intStudentCount;
         }
@@ -64,7 +64,7 @@ namespace _09_Protected_Access_Modifier
 
             Console.WriteLine(ObjS1.GetInfo());
             Console.WriteLine(ObjS2.GetInfo());
-            Console.WriteLine("Number of students: "+ ObjS1.GetTotalStudents().ToString());
+            Console.WriteLine("Number of students: "+ School.GetTotalStudents().ToString());
             Console.ReadKey();
         }
     }
