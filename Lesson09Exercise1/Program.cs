@@ -10,7 +10,7 @@ namespace Lesson09Exercise1
     {
         private string strCinemaName;
         protected static int intTicketSold;
-        protected static int intTicketSales;
+        protected static int intTicketSales = 0;
         public string CinemaName //b
         {
             get { return strCinemaName; }
@@ -22,6 +22,10 @@ namespace Lesson09Exercise1
         public static int TicketSold()
         { 
             return intTicketSold; 
+        }
+        public static int getTicketPrice()
+        {
+            return intTicketSales;
         }
     }
     class Ticket : Cinema
@@ -40,11 +44,12 @@ namespace Lesson09Exercise1
         {
             this.strMovie = strMovie;
             this.fltTicketPrice = fltTicketPrice;
-            fltTicketPrice += intTicketSales;
-            intTicketSold++;
+            int intTicketPrice = (int)Math.Round(fltTicketPrice);
+            intTicketSales += intTicketPrice;
+            intTicketSold ++;
         } //e
 
-
+        
 
     }
     internal class Program
@@ -74,6 +79,8 @@ namespace Lesson09Exercise1
             Console.WriteLine("Cinema name: {0}", objT2.Movie);
 
             Console.WriteLine("Total ticket sold: "+ Cinema.TicketSold().ToString());
+            Console.WriteLine("Total ticket sold in price is : "+ Cinema.TicketSold().ToString());
+            Console.WriteLine("Total ticket sold in price is : "+ Cinema.getTicketPrice().ToString());
 
             Console.ReadKey();
         }
