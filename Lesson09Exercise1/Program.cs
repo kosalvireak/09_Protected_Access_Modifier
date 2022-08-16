@@ -66,7 +66,7 @@ namespace Lesson09Exercise1
             string movie = Console.ReadLine();
             Console.WriteLine("Enter the price 1: ");
             float price = float.Parse(Console.ReadLine());
-            objT1 = new Ticket(cinema, price, movie);
+            objT1 = new Ticket( movie, price, cinema);
 
 
             Console.WriteLine("Enter the cinema 2: ");
@@ -75,10 +75,10 @@ namespace Lesson09Exercise1
             movie = Console.ReadLine();
             Console.WriteLine("Enter the price 2: ");
             price = float.Parse(Console.ReadLine());
-            objT2 = new Ticket(cinema, price, movie);
+            objT2 = new Ticket(movie, price, cinema);
 
-            Console.WriteLine("Cinema name: {0}", objT1.Movie);
-            Console.WriteLine("Cinema name: {0}", objT2.Movie);
+            Console.WriteLine("Cinema name: {0}", objT1.CinemaName);
+            Console.WriteLine("Cinema name: {0}", objT2.CinemaName);
 
             Console.WriteLine("Total ticket sold: "+ Cinema.TicketSold().ToString());
             Console.WriteLine("Total ticket sold in price is : "+ Cinema.TicketSold().ToString());
